@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRMS - Student Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav style="background: var(--bg-card); padding: 1rem; border-bottom: 1px solid var(--border);">
+        <div class="container flex justify-between items-center" style="padding: 0;">
+            <h3>🎓 Student Portal</h3>
+            <div class="flex items-center">
+                <span id="student-name" class="text-muted" style="margin-right: 1rem;">User</span>
+                <button onclick="logout()" class="btn btn-danger"
+                    style="padding: 0.5rem 1rem; font-size: 0.8rem;">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- Stats Overview -->
+        <div class="grid grid-cols-2 mb-4">
+            <div class="card">
+                <h4 class="text-muted">Attendance</h4>
+                <h1 id="attendance-val" style="color: var(--primary);">--%</h1>
+                <p id="attendance-msg" class="text-muted" style="font-size: 0.9rem;">Good standing</p>
+            </div>
+            <div class="card">
+                <h4 class="text-muted">Overall Marks</h4>
+                <h1 id="marks-val" style="color: var(--secondary);">--</h1>
+                <p class="text-muted" style="font-size: 0.9rem;">Average across subjects</p>
+            </div>
+        </div>
+
+        <!-- Marks Details -->
+        <div class="card mb-4">
+            <h3>Subject Performance</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks Obtained</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="marks-table-body">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Actions Area -->
+        <div class="grid grid-cols-2">
+
+            <!-- New Request Form -->
+            <div class="card">
+                <h3>Submit Request / Complaint</h3>
+                <div class="input-group">
+                    <label class="text-muted" style="display:block; margin-bottom: 0.5rem;">Request Type</label>
+                    <select id="req-type" class="input-field">
+                        <option value="Correction">Marks Correction</option>
+                        <option value="Attendance">Attendance Issue</option>
+                        <option value="Complaint">General Complaint</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label class="text-muted" style="display:block; margin-bottom: 0.5rem;">Message</label>
+                    <textarea id="req-msg" class="input-field" rows="4" placeholder="Describe your issue..."></textarea>
+                </div>
+                <button onclick="submitRequest()" class="btn btn-primary">Submit Request</button>
+            </div>
+
+            <!-- Previous Requests -->
+            <div class="card">
+                <h3>My History</h3>
+                <div id="history-list" style="max-height: 300px; overflow-y: auto;">
+                    <!-- Populated by JS -->
+                    <p class="text-muted" style="text-align: center; margin-top: 2rem;">No history found.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/student.js"></script>
+</body>
+
+</html>

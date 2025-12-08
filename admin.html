@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRMS - Admin Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav style="background: var(--bg-card); padding: 1rem; border-bottom: 1px solid var(--border);">
+        <div class="container flex justify-between items-center" style="padding: 0;">
+            <h3>🛡️ Admin Portal</h3>
+            <div class="flex items-center">
+                <button onclick="logout()" class="btn btn-danger"
+                    style="padding: 0.5rem 1rem; font-size: 0.8rem;">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="grid grid-cols-2 mb-4">
+            <div class="card">
+                <h4 class="text-muted">Total Students</h4>
+                <h1 id="total-students">--</h1>
+            </div>
+            <div class="card">
+                <h4 class="text-muted">Pending Requests</h4>
+                <h1 id="pending-count" style="color: var(--warning);">--</h1>
+            </div>
+        </div>
+
+        <div class="grid" style="grid-template-columns: 2fr 1fr; gap: 1rem;">
+
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+
+                <!-- Add Student Form -->
+                <div class="card">
+                    <h3>➕ Add New Student</h3>
+                    <div class="grid grid-cols-2" style="gap: 1rem;">
+                        <input type="text" id="new-name" class="input-field" placeholder="Full Name">
+                        <input type="text" id="new-id" class="input-field" placeholder="Student ID">
+                        <input type="number" id="new-att" class="input-field" placeholder="Attendance %">
+                        <div class="flex" style="gap: 0.5rem;">
+                            <input type="number" id="mark-math" class="input-field" placeholder="Math">
+                            <input type="number" id="mark-phy" class="input-field" placeholder="Phy">
+                            <input type="number" id="mark-cs" class="input-field" placeholder="CS">
+                        </div>
+                    </div>
+                    <button onclick="handleAddNewStudent()" class="btn btn-primary mt-4">Add Student</button>
+                </div>
+
+                <!-- Requests Management -->
+                <div class="card">
+                    <h3>Incoming Requests & Complaints</h3>
+                    <div id="requests-list">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Student List (Read Only) -->
+            <div class="card">
+                <h3>All Students</h3>
+                <ul id="student-list" style="list-style: none; margin-top: 1rem;">
+                    <!-- Populated by JS -->
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
