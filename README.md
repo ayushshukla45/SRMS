@@ -55,37 +55,27 @@ SRMS/
 │   └── script.js
 └── README.md
 
+---
+## ▶️ How to Run Locally
 
-#▶️ How to Run Locally
+-Clone the repository:
+-git clone https://github.com/ayushshukla45/SRMS.git
+-Open the project folder
+-Open index.html in your browser
 
-Clone the repository:
-
-git clone https://github.com/ayushshukla45/SRMS.git
 
 
-Open the project folder
-
-Open index.html in your browser
-
-✅ No additional setup required.
-
-🌐 Live Demo
-
-👉 Try it here:
+## 🌐 Live Demo
+## 👉 Try it here:
 https://ayushshukla45.github.io/SRMS/
 
-🚀 Future Improvements
+## 🚀 Future Improvements
 
-Add search and filter functionality
+-Add search and filter functionality
+-Persist data using LocalStorage or backend integration
+-Implement role-based access (Admin/User)
+-Improve form validation and error handling
 
-Persist data using LocalStorage or backend integration
-
-Implement role-based access (Admin/User)
-
-Improve form validation and error handling
-
-👤 Author
-
-Ayush Shukla
-
-GitHub: https://github.com/ayushshukla45
+## 👤 Author
+-Ayush Shukla
+-GitHub: https://github.com/ayushshukla45
